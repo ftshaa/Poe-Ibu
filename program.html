@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Poe Ibu</title>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: #514735;
+        background: white;
+        padding-top: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        padding: 20px 9%;
+        z-index: 1000;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: 800;
+    }
+
+    .logo span {
+        color: #E9B92F;
+    }
+
+    nav {
+        display: flex;
+        gap: 30px;
+    }
+
+    nav a {
+        font-size: 13px;
+        color: #777;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #D6A719;
+    }
+
+    .hero {
+        padding: 65px 9%;
+        background: #FFF5D6;
+    }
+
+    .label {
+        color: #A47D12;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        margin: 15px 0;
+    }
+
+    .hero h1 span {
+        color: #D6A719;
+    }
+
+    .hero p {
+        color: #858585;
+        font-size: 13px;
+        line-height: 1.9;
+        max-width: 600px;
+    }
+
+    .section {
+        padding: 65px 9%;
+    }
+
+    .section h2 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .description {
+        color: #858585;
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .amount {
+        margin-top: 30px;
+        padding: 35px;
+        background: #F6D76B;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    .amount:hover {
+        transform: translateY(-5px);
+    }
+
+    .amount h2 {
+        font-size: 45px;
+        margin: 10px 0;
+    }
+
+    .amount p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        background: #FFF5D6;
+        color: #A47D12;
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 25px;
+    }
+
+    th, td {
+        border: 1px solid #E9DCA9;
+        padding: 15px;
+        text-align: left;
+        font-size: 13px;
+    }
+
+    th {
+        background: #F6D76B;
+    }
+
+    tr:nth-child(even) {
+        background: #FFF5D6;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .card {
+        padding: 30px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-7px);
+        border-color: #F6D76B;
+        box-shadow: 0 8px 20px #00000010;
+    }
+
+    .card .icon {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .card h3 {
+        font-size: 19px;
+        margin: 12px 0;
+    }
+
+    .card p {
+        color: #858585;
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    .info {
+        margin-top: 30px;
+        background: #FFFDF7;
+        padding: 30px;
+        border-radius: 10px;
+        border-left: 5px solid #F6D76B;
+    }
+
+    .info h3 {
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .info p {
+        color: #858585;
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    .faq {
+        margin-top: 25px;
+    }
+
+    details {
+        border-bottom: 1px solid #eee;
+        padding: 18px 0;
+    }
+
+    summary {
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    summary::after {
+        content: "+";
+        font-size: 20px;
+        color: #D6A719;
+    }
+
+    details[open] summary::after {
+        content: "−";
+    }
+
+    details p {
+        padding-top: 15px;
+        font-size: 12px;
+        line-height: 1.9;
+        color: #858585;
+    }
+
+    .footer {
+            background: #514735;
+            color: white;
+            padding: 30px 9%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .school {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .school img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .school-text h3 {
+            font-size: 16px;
+            margin: 0 0 5px;
+        }
+
+        .school-text p {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        .footer-bawah {
+            border-top: 1px solid white;
+            margin-top: 25px;
+            padding-top: 15px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            color: #cbd5e1;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Poe Ibu<span>.</span></a>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="program.html" class="active">Program</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+
+        <span class="label">PROGRAM & APRESIASI</span>
+
+        <h1>Bersama memberi, <span>bersama berbagi.</span></h1>
+
+        <p>
+            Mengenal lebih jauh mekanisme kontribusi
+            dan bentuk apresiasi dalam program Poe Ibu.
+        </p>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Kontribusi Harian</h2>
+
+        <div class="amount">
+
+            <span class="badge">KONTRIBUSI SUKARELA</span>
+
+            <h2>Rp1.000</h2>
+
+            <p>
+                Per siswa setiap hari. Dimulai dari nominal
+                kecil, setiap kontribusi dapat menjadi bagian
+                dari kepedulian terhadap kebutuhan bersama.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="section" style="background:#FFFDF7;">
+
+        <h2>Informasi Program</h2>
+
+        <p class="description">
+            Ringkasan informasi mengenai Poe Ibu.
+        </p>
+
+        <table>
+
+            <tr>
+                <th>Keterangan</th>
+                <th>Informasi</th>
+            </tr>
+
+            <tr>
+                <td>Nama Program</td>
+                <td>Poe Ibu</td>
+            </tr>
+
+            <tr>
+                <td>Nominal Kontribusi</td>
+                <td>Rp1.000</td>
+            </tr>
+
+            <tr>
+                <td>Waktu</td>
+                <td>Setiap hari</td>
+            </tr>
+
+            <tr>
+                <td>Sifat Partisipasi</td>
+                <td>Sukarela</td>
+            </tr>
+
+            <tr>
+                <td>Tujuan</td>
+                <td>Mendukung kebutuhan bersama</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Apresiasi & Reward</h2>
+
+        <p class="description">
+            Sebagai bentuk penghargaan atas konsistensi
+            dan partisipasi dalam program Poe Ibu.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">🏆</div>
+
+                <span class="badge">UNTUK KELAS</span>
+
+                <h3>Reward Kelas</h3>
+
+                <p>
+                    Kelas yang konsisten berpartisipasi
+                    dan memiliki jumlah pengumpulan
+                    mingguan yang tinggi berkesempatan
+                    mendapatkan diskon dari One Coffee Shop,
+                    SMK Negeri 1 Kota Bekasi.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">☕</div>
+
+                <span class="badge">UNTUK PETUGAS</span>
+
+                <h3>Kopi Gratis</h3>
+
+                <p>
+                    Tiga petugas pengumpul Poe Ibu dari kelas yang konsisten 
+                    berpartisipasi akan mendapatkan
+                    apresiasi berupa kopi gratis dari
+                    One Coffee Shop.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="info">
+
+            <h3>Lebih dari sekadar reward.</h3>
+
+            <p>
+                Apresiasi diberikan untuk menghargai
+                usaha dan konsistensi. Namun, tujuan
+                utama Poe Ibu tetaplah membangun
+                kepedulian dan kebersamaan.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="section" style="background:#FFFDF7;">
+
+        <h2>Pertanyaan Yang Sering Muncul</h2>
+
+        <p class="description">
+            Masih punya pertanyaan tentang Poe Ibu?
+            Temukan jawabannya di sini.
+        </p>
+
+        <div class="faq">
+
+            <details>
+                <summary>Apakah Poe Ibu wajib diikuti?</summary>
+                <p>
+                    Tidak. Partisipasi dalam program
+                    Poe Ibu bersifat sukarela dan
+                    tidak ada paksaan bagi siswa.
+                </p>
+            </details>
+
+            <details>
+                <summary>Berapa nominal kontribusinya?</summary>
+                <p>
+                    Kontribusi yang dianjurkan sebesar
+                    Rp1.000 per siswa setiap hari.
+                </p>
+            </details>
+
+            <details>
+                <summary>Untuk apa dana Poe Ibu digunakan?</summary>
+                <p>
+                    Dana digunakan untuk mendukung
+                    kebutuhan sekolah dan warga sekolah.
+                    Informasi pemanfaatan dana dapat
+                    dilihat melalui laporan resmi pengelola.
+                </p>
+            </details>
+
+            <details>
+                <summary>Bagaimana kelas mendapatkan reward?</summary>
+                <p>
+                    Kelas yang konsisten berpartisipasi
+                    dan memiliki jumlah pengumpulan
+                    mingguan yang tinggi berkesempatan
+                    mendapatkan diskon One Coffee Shop.
+                </p>
+            </details>
+
+            <details>
+                <summary>Apakah petugas mendapatkan reward?</summary>
+                <p>
+                    Ya, tiga petugas pengumpul setiap
+                    hari mendapatkan kopi gratis dari
+                    One Coffee Shop.
+                </p>
+            </details>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="school">
+                <img src="logo.png" alt="Logo Sekolah">
+
+                <div class="school-text">
+                    <h3>SMK Negeri 1 Kota Bekasi</h3>
+                    <p>Fatisha • XI RPL A</p>
+                </div>
+            </div>
+
+            <div class="footer-bawah">
+                <p>© 2026 Poe Ibu</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
